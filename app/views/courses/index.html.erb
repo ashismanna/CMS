@@ -1,0 +1,19 @@
+<h2>Welcome <%=current_user.fullname%> </h2>
+<%= link_to destroy_user_session_path, method: :delete do %>
+	<button class="btn btn-danger" style="float: right">
+		Logout
+	</button>
+<%end%>
+<% if current_user.can_create_course? %>
+	<%= link_to "Create Course", new_course_path %>
+<%end%>
+
+
+<h3>Available Courses</h3>
+<% @courses.each do |course| %>
+	<li class="list-group-item list-group-item-primary">
+		<strong><%= course.title%><br></strong>
+		<%= course.description %>
+	</li>
+	<br>
+<%end%>

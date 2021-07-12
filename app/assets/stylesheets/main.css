@@ -1,0 +1,77 @@
+@import 'bootstrap/dist/css/bootstrap';
+
+.footer {
+   /* position: fixed; */
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   height: auto;
+   
+   color: white;
+   text-align: center;
+}
+
+
+html,body
+{
+	background-color: #F1F3F6;
+    height: 100%;
+ /*background:url("images/body_bg.jpg") left top repeat-x;  */ 
+
+}
+
+
+
+/*body{
+ background: linear-gradient(to left, rgba(245, 245, 245, 0.5), rgba(154, 193, 208, 0.5));
+
+
+}
+
+*/
+
+.design-rounded-input 
+{
+border-radius: 3rem;         /* 1rem=16px ,It stands for “Root em”. It is a relative unit of CSS and translated by the browser to pixels (px)*/
+background-color: #FFF3F3;
+
+
+}
+
+
+
+
+
+
+#page-content {
+  flex: 1 0 auto;
+}
+
+#sticky-footer {
+  flex-shrink: none;
+}
+
+.submit-rounded {
+border-radius: 1rem;
+
+
+}
+
+
+
+
+.box{
+
+height: 400px;
+width: 900px;
+border: 2px solid grey;
+background-color: #FFFFFF;
+
+
+}
+
+.very-small-btn{
+width: 10px;
+height:10px;
+border-radius: 50%;
+}

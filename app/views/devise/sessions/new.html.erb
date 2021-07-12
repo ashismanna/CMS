@@ -1,0 +1,118 @@
+<style>
+.design-rounded-input {
+  border-radius: 3rem;
+  background-color: #FFF3F3;
+}
+</style>
+
+
+<div class="container" style="padding: 0px;">
+  <div class="row"> 
+    <div class="col-sm-2"></div>
+     <div class="col-sm-8">
+      <h1>WelCome to Course Management Portal</h1>
+     </div>  
+     <div class="col-sm-2"> </div>   
+  </div>
+</div>
+<br>
+<div class="row">
+  <div class="col-sm-6 ps-5">
+    <div class="container">
+      <h4 style="text-align: center;">Fill up this form to create a new account</h4> <br>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <div class="form-group">
+          <div class="row">
+            <div class="col-sm-2">
+            <%= f.label :fullname %>                 
+            </div>
+              <div class="col-sm-8" >
+                <%= f.text_field :fullname, class: 'form-control design-rounded-input',placeholder: "Enter your full name"%>
+              </div>
+          </div>
+        </div>
+
+        <br>
+             
+        <div class="form-group">
+          <div class="row">
+            <div class="col-sm-2">
+                <%= f.label :email %>
+            </div>
+            <div class="col-sm-8">
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control design-rounded-input", placeholder:"Email" %>
+            </div>
+           </div>
+        </div>
+        <br>
+        <div class="field form-group">
+          <div class="row">
+            <div class="col-sm-2">            
+              <%= f.label :password %>
+              <% if @minimum_password_length %>
+              <em>(<%= @minimum_password_length %> characters minimum)</em>
+              <% end %>
+            </div>
+
+            <div class="col-sm-8">
+              <%= f.password_field :password, autocomplete: "new-password", class:"form-control design-rounded-input", placeholder:"Password" %>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="field form-group">
+          <div class="row">
+                
+            <div class="col-sm-2">            
+              <%= f.label :password_confirmation %>
+          </div>
+          <div class="col-sm-8">
+              <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"form-control design-rounded-input", placeholder:"Password Confirmation" %>
+            </div>
+          </div>
+        </div> <br>
+       <br>
+        <div class="actions">
+          <%= f.submit "Sign up", class:"btn btn-success mx-auto d-block submit-rounded" %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="row">
+      <div class="container">
+        <h4 style="text-align: center;">Enter the Login Credentials</h4><br>
+          <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <div class="form-group">
+                          &nbsp;
+            <div class="row">
+              <div class="col-sm-2">
+                <label >Email</label>
+              </div>
+              <div class="col-sm-8">
+                <%= f.text_field :email, class: 'form-control design-rounded-input',placeholder: "Enter your email"%>
+              </div>
+            </div>
+          </div>
+          <br>
+          <div class="form-group">
+            <div class="row">
+              <div class="col-sm-2">
+                <label for="password">Password</label>
+              </div>
+              <div class="col-sm-8">
+                <%= f.password_field :password, class: 'form-control design-rounded-input',placeholder: "Enter your password"%>
+                  <br>
+                <%= f.submit :login, class: 'btn btn-success mx-auto d-block submit-rounded'%>
+                <br>
+              </div>
+            </div>
+          </div>
+          <br>           
+        <% end %>       
+      </div>
+    </div>
+  </div>
+</div>
+
+<%#= render "devise/shared/links" %>
