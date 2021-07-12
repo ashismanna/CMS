@@ -3,18 +3,23 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  after_create :set_user_type
 
   #associations
   has_many :course_enrollments
   has_many :courses, through: :course_enrollments
 
-  def set_user_type
-    self.update(:user_type => "student")
+  def can_enroll_course?
+    user_type=="student"
   end
 
-  def can_create_course?
+  def has_enrolled?(course)
+    course_enrollment =  self.course_enrollments.where(:course_id=>course.id)
+    course_enrollment and course_enrollment.any?
+  end
+
+  def admin?
     user_type=="admin"
   end
+
 
 end

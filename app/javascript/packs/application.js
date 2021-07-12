@@ -21,8 +21,8 @@ import 'bootstrap/dist/css/bootstrap'
 import "../stylesheets/application"
 
 
-import { Application } from "stimulus"
-import { definitionsFromContext } from "stimulus/webpack-helpers"
+// import { Application } from "stimulus"
+// import { definitionsFromContext } from "stimulus/webpack-helpers"
 
 
 
@@ -30,3 +30,5 @@ Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
+require("trix")
+require("@rails/actiontext")
